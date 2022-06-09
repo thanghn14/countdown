@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Countdown from './pages/countdown/Countdown';
+import LoginSuccess from './pages/LoginSuccess/LoginSuccess';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Countdown />
+    <LoginSuccess />
   </React.StrictMode>
 );
