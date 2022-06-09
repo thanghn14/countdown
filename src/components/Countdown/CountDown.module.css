@@ -1,0 +1,15 @@
+.wrapCount{
+    position: absolute;
+    bottom:20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+.time{
+    font-family: 'Exo 2', sans-serif;
+
+    color:#fff;
+    font-size: 30px;
+}
