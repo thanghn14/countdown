@@ -1,41 +1,47 @@
 import React, { useState, useEffect } from 'react'
 import styles from "./CountDown.module.css"
 function Countdown() {
-  const [countdownDate, setCountdownDate] = useState(new Date('6/10/2022').getTime());
+  // const [countdownDate, setCountdownDate] = useState(new Date('6/10/2022').getTime());
   const [hour, setHour] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [second, setSecond] = useState(0);
-  useEffect(() => {
-    setInterval(function Count(secondNum) {
-      let getHours = secondNum/3600
-      // console.log(getHours)
-      // var countdownDate = new Date(`Jan 5, 2023  ${getHours}:0:0`).getTime();
-      var now = new Date().getTime();
-      var distance = countdownDate - now;
-      // Time calculations for days, hours, minutes and seconds
-      setHour(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-      setMinutes(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-      setSecond(Math.floor((distance % (1000 * 60)) / 1000));
-      // console.log(countdownDate)
+  const number = React.useRef(0)
+  function Count(secondNum) {
+    number.current = secondNum
+    function handleCount() {
+      setHour(~~(number.current / 3600));
+      setMinutes(~~((number.current % 3600) / 60));
+      setSecond(~~number.current % 60);
+      console.log(second)
+      console.log(minutes)
+      number.current-- 
+    }
+    return handleCount
+    
+  }
 
-    }, 1000)
-  },[])
+  React.useLayoutEffect(() => {
+    const handCount = Count(2000)
+    handCount()
+    setInterval(handCount,1000)
+  }, [])
+
 
   return (
     <div >
-      
+
       <div className={styles.wrapCount}>
 
         <div className='time-section'>
           <div className={styles.time}>{hour || '00'}</div>
         </div>
-       <span  className={styles.time}>:</span>
+        <span className={styles.time}>:</span>
         <div className='time-section'>
           <div className={styles.time}>{minutes || '00'}</div>
         </div>
-       <span  className={styles.time}>:</span>
+        <span className={styles.time}>:</span>
         <div className='time-section'>
-          <div className={styles.time}>{second || '00'}</div>
+          <div className={styles.time}>{~~number.current % 60 || '00'}</div>
         </div>
       </div>
     </div>
