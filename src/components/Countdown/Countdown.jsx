@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import styles from "./CountDown.module.css"
+
 function Countdown() {
   // const [countdownDate, setCountdownDate] = useState(new Date('6/10/2022').getTime());
   const [hour, setHour] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [second, setSecond] = useState(0);
   const number = React.useRef(0)
+
   function Count(secondNum) {
     number.current = secondNum
     function handleCount() {
@@ -44,6 +46,7 @@ function Countdown() {
           <div className={styles.time}>{~~number.current % 60 || '00'}</div>
         </div>
       </div>
+
     </div>
   )
 }
