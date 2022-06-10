@@ -1,5 +1,5 @@
 .main {
-    background-image: url(../../assets/imgs/1.jpg);
+    background-image: url(../../assets/imgs/7.jpg);
     animation: change 15s infinite ease-in;
     width: 100vw;
     height: 100vh;
@@ -9,18 +9,18 @@
 }
 @keyframes change {
     25% {
-        background-image: url(../../assets/imgs/6.jpg);
+        background-image: url(../../assets/imgs/11.jpg);
     }
 
     50% {
-        background-image: url(../../assets/imgs/7.jpg);
-    }
-
-    75% {
         background-image: url(../../assets/imgs/10.jpg);
     }
 
+    75% {
+        background-image: url(../../assets/imgs/16.jpg);
+    }
+
     100% {
-        background-image: url(../../assets/imgs/1.jpg);
+        background-image: url(../../assets/imgs/7.jpg);
     }
 }

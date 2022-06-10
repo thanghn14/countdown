@@ -6,6 +6,7 @@ function Countdown() {
   const [hour, setHour] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [second, setSecond] = useState(0);
+  const [cobra,setCobra] = useState(1982)
   const number = React.useRef(0)
 
   function Count(secondNum) {
@@ -13,22 +14,21 @@ function Countdown() {
     function handleCount() {
       setHour(~~(number.current / 3600));
       setMinutes(~~((number.current % 3600) / 60));
-      setSecond(~~number.current % 60);
-      console.log(second)
-      console.log(minutes)
-      number.current-- 
+      setSecond(~~number.current % 60); 
+       
     }
     return handleCount
     
   }
 
+  React.useLayoutEffect(() => { 
+    setInterval(Count(2000),1000)
+  }, []) 
   React.useLayoutEffect(() => {
-    const handCount = Count(2000)
-    handCount()
-    setInterval(handCount,1000)
-  }, [])
-
-
+      setTimeout(() => {  
+        setCobra(cobra-1) 
+      },1000)
+  },[cobra])
   return (
     <div >
 
@@ -39,11 +39,11 @@ function Countdown() {
         </div>
         <span className={styles.time}>:</span>
         <div className='time-section'>
-          <div className={styles.time}>{minutes || '00'}</div>
+          <div className={styles.time}>{( Math.floor(cobra  % 3600 / 60)) < 10 ? '0' +( Math.floor(cobra  % 3600 / 60)) : ( Math.floor(cobra  % 3600 / 60))}</div>
         </div>
         <span className={styles.time}>:</span>
         <div className='time-section'>
-          <div className={styles.time}>{~~number.current % 60 || '00'}</div>
+          <div className={styles.time}>{(cobra%60) < 10 ? '0' +(cobra%60) : (cobra%60)}</div>
         </div>
       </div>
 
