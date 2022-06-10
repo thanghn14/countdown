@@ -106,7 +106,7 @@ function Clock() {
         <p>Trang web sẽ sớm ra mắt</p>
 
         <form className={styles.subscribe} action="submit">
-          <input type="text" placeholder="Nhập email của bạn"/>
+          <input type="text" placeholder="  Nhập email của bạn"/>
           <button>Đăng ký</button>
         </form>
       </div>
