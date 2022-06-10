@@ -1,3 +1,6 @@
+html {
+    font-family: 'Exo 2', sans-serif;
+}
 
 .canvas{
     width: 360px ;
@@ -77,8 +80,6 @@
     z-index: 1;
 }
 
-
-
 .axis {
     background: #818181;
     border: 2px solid white;
@@ -94,8 +95,73 @@
     width: 8px;
 }
 
+.navbar ul{
+    position: absolute;
+    border: 0;
+    bottom: -240px;
+    left: -700px;
+}
 
+.navbar ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 10px 0 10px;
+}
 
+.navbar a {
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+}
 
+.navbar a:hover {
+    text-decoration: underline;
+}
 
+.form {
+    position: absolute;
+    bottom: -220px;
+}
 
+.form p {
+    display: inline-block;
+    font-size: 32px;
+    color: #fff;
+    width: 100%;
+}
+
+.subscribe {
+    margin-top: 50px;
+}
+
+.subscribe input, button{
+    color: #fff;
+    border: 1px solid #cdcfd0;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 0 10px 0;
+}
+
+.subscribe input {
+    width: 70%;
+}
+
+.subscribe button {
+    width: 30%;
+}
+
+.icon {
+    position: absolute;
+    bottom: -245px;
+    right: -700px;
+}
+
+.icon a {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 6px;
+}
